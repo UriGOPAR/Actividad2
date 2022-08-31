@@ -14,7 +14,8 @@
 
 #include "header.h"
 #include <vector>
-
+int c1;
+int c2;
 // =================================================================
 // Performs a sequential search for an element within a vector.
 //
@@ -25,7 +26,9 @@
 // =================================================================
 template <class T>
 int sequentialSearch(const std::vector<T> &v, T key) {
+	c1=0;
 	for (int i = 0; i < v.size(); i++) {
+		c1++;
 		if (v[i] == key) {
 			return i;
 		}
@@ -44,11 +47,13 @@ int sequentialSearch(const std::vector<T> &v, T key) {
 template <class T>
 int binarySearch(const std::vector<T> &v, T key) {
 	int low, high, mid;
+	c2=0;
 
 	low = 0;
 	high = v.size() - 1;
 	while (low <= high) {
 		mid = low + ((high - low) / 2); // mid = (high + low) / 2;
+		c2++;
 		if (key == v[mid]) {
 			return mid;
 		} else if (key < v[mid]) {
