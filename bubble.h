@@ -41,11 +41,14 @@ int bubbleSort(T *arr, int size) {
 // =================================================================
 template <class T>
 int bubbleSort(std::vector<T> &v) {
+
+	int c=0;
 	for(int i = v.size() - 1; i > 0; i--){
-		int c=0;
+
 		for(int j = 0; j < i; j++){
-			c++;
+		
 			if(v[j] > v[j + 1]){
+				c++;
 				swap(v, j, j + 1);
 			}
 		}
